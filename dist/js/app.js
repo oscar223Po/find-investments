@@ -1,5 +1,12 @@
 (() => {
     "use strict";
+    function addLoadedClass() {
+        if (!document.documentElement.classList.contains("loading")) window.addEventListener("load", (function() {
+            setTimeout((function() {
+                document.documentElement.classList.add("loaded");
+            }), 0);
+        }));
+    }
     let bodyLockStatus = true;
     function menuInit() {
         if (document.querySelector(".icon-menu")) document.addEventListener("click", (function(e) {
@@ -16,5 +23,6 @@
         }
     }), 0);
     window["FLS"] = false;
+    addLoadedClass();
     menuInit();
 })();
