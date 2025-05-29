@@ -1,0 +1,119 @@
+//========================================================================================================================================================
+// Заголовки, загальні БЕМ блоки та інше...
+//========================================================================================================================================================
+::-webkit-scrollbar {
+	width: toRem(1);
+	border-radius: toRem(10);
+	background-color: $bgColor;
+}
+::-webkit-scrollbar-thumb {
+	border-radius: toRem(10);
+	background-color: $mainColor;
+}
+::selection {
+	background-color: rgba(#a60101, 0.5);
+}
+summary {
+	list-style: none;
+	&::marker {
+		display: none;
+	}
+}
+@supports (-webkit-appearance: none) {
+	summary::-webkit-details-marker {
+		display: none;
+	}
+}
+//========================================================================================================================================================
+// Title
+.title {
+	&--large {
+		display: flex;
+		font-weight: 600;
+		line-height: 111%;
+		text-align: center;
+		row-gap: toRem(10);
+		align-items: center;
+		flex-direction: column;
+		text-transform: uppercase;
+		font-family: $fontFamilySecond;
+		@include adaptiveValue("font-size", 92, 24);
+		span {
+			font-weight: 500;
+			line-height: 95%;
+			font-family: $fontFamily;
+			text-transform: lowercase;
+			@include adaptiveValue("font-size", 42, 20);
+		}
+	}
+	&--medium {
+		font-weight: 600;
+		line-height: 141%;
+		text-transform: uppercase;
+		font-family: $fontFamilySecond;
+		@include adaptiveValue("font-size", 34, 20);
+	}
+}
+// Text
+.text {
+	&--32-dg {
+		font-weight: 500;
+		line-height: 112%;
+		@include adaptiveValue("font-size", 32, 18);
+		span {
+			color: $GrayDarkColor;
+		}
+	}
+	&--32-dy {
+		font-weight: 500;
+		line-height: 112%;
+		@include adaptiveValue("font-size", 32, 18);
+		span {
+			color: $GreenDarkColor;
+		}
+	}
+	&--22-dg {
+		font-weight: 500;
+		line-height: 133%;
+		@include adaptiveValue("font-size", 22, 16);
+		span {
+			color: $GrayDarkColor;
+		}
+	}
+	&--20-dy {
+		font-weight: 500;
+		line-height: 120%;
+		@include adaptiveValue("font-size", 20, 14);
+		span {
+			color: $GreenDarkColor;
+		}
+	}
+}
+// Image
+.img {
+	height: 100%;
+	overflow: hidden;
+	@include adaptiveValue("border-radius", 20, 10);
+	img {
+		height: 100%;
+		max-width: 100%;
+		object-fit: cover;
+	}
+}
+// List
+.list {
+	display: grid;
+	@include adaptiveValue("gap", 15, 8);
+	li {
+		display: flex;
+		font-weight: 500;
+		line-height: 136%;
+		@include adaptiveValue("gap", 20, 10);
+		@include adaptiveValue("font-size", 22, 16);
+		&::before {
+			font-size: toRem(24);
+			padding-top: toRem(3);
+			color: $GreenDarkColor;
+		}
+	}
+}

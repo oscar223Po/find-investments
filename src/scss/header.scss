@@ -1,0 +1,209 @@
+// Header
+.header {
+	left: 0;
+	width: 100%;
+	z-index: 10;
+	position: fixed;
+	@include adaptiveValue("top", 20, 14, 2, 1920, 991.98);
+	@include adaptiveValue("padding-left", 20, 14, 2, 1920, 991.98);
+	@include adaptiveValue("padding-right", 20, 14, 2, 1920, 991.98);
+	// .header__container
+	&__container {
+		display: flex;
+		position: relative;
+		align-items: center;
+		background-color: #fff;
+		justify-content: space-between;
+		@include adaptiveValue("padding", 20, 10);
+		@include adaptiveValue("border-radius", 20, 10, 2, 1920, 991.98);
+		box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+		@media (max-width: $tablet) {
+			border-radius: 0px 0px 15px 15px;
+		}
+	}
+	// .header__logo
+	&__logo {
+		z-index: 1;
+		display: flex;
+		gap: toRem(20);
+		position: relative;
+		span {
+			max-width: toRem(220);
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 122%;
+			color: $GrayDarkColor;
+			@media (max-width: toEm(1509.98)) {
+				display: none;
+			}
+		}
+		@media (max-width: toEm(739.98)) {
+			display: none;
+		}
+	}
+	// .header__result
+	&__result {
+		display: flex;
+		gap: toRem(20);
+		z-index: 1;
+		position: relative;
+		align-items: center;
+		@media (max-width: toEm(1039.98)) {
+			display: none;
+		}
+	}
+	// .header__number
+	&__number {
+		display: flex;
+		font-weight: 500;
+		align-items: center;
+		pointer-events: none;
+		color: $GreenDarkColor;
+		text-transform: uppercase;
+		font-family: $fontFamilySecond;
+		@include adaptiveValue("gap", 20, 10, 2, 1920, 1039.98);
+		@include adaptiveValue("font-size", 81, 65, 2, 1920, 1039.98);
+	}
+	// .header__content
+	&__content {
+		display: flex;
+		font-size: 22px;
+		font-weight: 500;
+		line-height: 136%;
+		flex-direction: column;
+		justify-content: space-between;
+		span {
+			font-size: 18px;
+			color: $GrayDarkColor;
+		}
+		@media (max-width: toEm(1769.98)) {
+			display: none;
+		}
+	}
+	// .header__contact
+	&__contact {
+		display: flex;
+		gap: toRem(20);
+		align-items: center;
+		@media (max-width: toEm(739.98)) {
+			width: 100%;
+			justify-content: space-between;
+		}
+	}
+	// .header__main
+	&__main {
+		display: flex;
+		z-index: 1;
+		position: relative;
+		gap: toRem(5);
+		align-items: end;
+		text-align: right;
+		flex-direction: column;
+		span {
+			font-size: 22px;
+			font-weight: 500;
+			line-height: 136%;
+			pointer-events: none;
+		}
+		a {
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 122%;
+			color: $GrayDarkColor;
+			transition: color 0.3s;
+			text-decoration: underline;
+			text-decoration-skip-ink: none;
+			@media (any-hover: hover) {
+				&:hover {
+					color: red;
+				}
+			}
+		}
+		@media (max-width: toEm(739.98)) {
+			display: none;
+		}
+	}
+	// .header__mobile
+	&__mobile {
+		z-index: 1;
+		display: flex;
+		gap: toRem(10);
+		position: relative;
+		align-items: center;
+		@media (min-width: toEm(739.98)) {
+			display: none;
+		}
+	}
+	// .header__mobile-logo
+	&__mobile-logo {
+		@media (max-width: toEm(499.98)) {
+			img {
+				width: toRem(45);
+			}
+		}
+	}
+	// .header__mobile-phone
+	&__mobile-phone {
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 133%;
+		@media (max-width: toEm(499.98)) {
+			display: none;
+		}
+	}
+	// .header__socials
+	&__socials {
+		z-index: 1;
+		display: flex;
+		gap: toRem(10);
+		position: relative;
+		align-items: center;
+	}
+	// .header__social
+	&__social {
+		display: flex;
+		width: toRem(60);
+		height: toRem(60);
+		align-items: center;
+		font-size: toRem(30);
+		justify-content: center;
+		border-radius: toRem(10);
+		background-color: $GrayLightColor;
+		box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+		transition:
+			background-color 0.4s,
+			color 0.4s;
+		&:last-child {
+			color: $GreenLightColor;
+			background-color: $mainColor;
+		}
+		svg {
+			width: toRem(30);
+		}
+		&--tel {
+			@media (min-width: toEm(499.98)) {
+				display: none;
+			}
+		}
+		&.icon-menu {
+			z-index: 1;
+			position: relative;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: $GreenLightColor;
+				background-color: $mainColor;
+			}
+		}
+		@media (min-width: toEm(1279.98)) {
+			&:last-child {
+				display: none;
+			}
+		}
+		@media (max-width: toEm(499.98)) {
+			width: toRem(46);
+			height: toRem(46);
+			font-size: toRem(24);
+		}
+	}
+}

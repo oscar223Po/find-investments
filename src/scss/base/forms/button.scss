@@ -1,0 +1,32 @@
+// Button
+.button {
+	font-weight: 500;
+	line-height: 112%;
+	padding: 10px 0px;
+	text-align: center;
+	align-items: center;
+	display: inline-flex;
+	justify-content: center;
+	background-color: $GreenLightColor;
+	box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+	transition:
+		background-color 0.4s,
+		color 0.4s;
+	@include adaptiveValue("border-radius", 20, 10);
+	@media (any-hover: hover) {
+		&:hover {
+			color: $GreenLightColor;
+			background-color: $mainColor;
+		}
+	}
+	// .button--large
+	&--large {
+		@include adaptiveValue("font-size", 32, 18);
+		@include adaptiveValue("min-height", 98, 70);
+		@include adaptiveValue("padding-left", 100, 35);
+		@include adaptiveValue("padding-right", 100, 35);
+	}
+	&--fw {
+		width: 100%;
+	}
+}
